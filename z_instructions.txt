@@ -1,0 +1,44 @@
+clone the starter kit: https://github.com/dappuniversity/starter_kit
+
+Backend
+-------
+open ganache, link project with truffle_config.js
+
+write a new migrations, similar to the existing one with the contract name
+
+create contract, <name>.sol with all the data members and functions
+
+Write test to validate the functions <name>.test.js
+
+truffle compile - compile the contracts to abis
+truffle migrate - migrate contract info to ganache
+truffle test - run tests
+truffle networks - list available networks
+truffle console - interact
+
+Frontend
+--------
+load web3 for metamask, blockchain browsers
+
+Access web3 as window.web3
+
+Use the <contract_name>.json file to get abi info and network data 
+with window.web3.eth.net.getId()
+load contract, contract methods accessed as <name>.methods.func_name().call() 
+for reading and payable functions as <name>.methods.func_name().call().send({}) 
+Use states
+
+Deployment
+----------
+
+In metamask, select kovan test network
+Get an account from ganache, import using key in metamask as deployer
+Send address in the kovan facet gitter room to get 3 ETH
+Use remix.ethereum to compile, run and deploy <name>.sol with gas 50 
+and value 1000000. 
+Go to the kovan.etherscan.io page to get contract addr and transaction hash
+Insert these in a new network entry created in the abis/<name>.json file with
+the port 42.
+Now check with truffle networks
+Go to our market, create product, set gas value for fast results
+Done!
